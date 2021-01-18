@@ -44,9 +44,13 @@ export default function SearchMovies() {
         </button>
       </form>
       <div className="card-list">
-        {movies.map((movie: any) => (
-          <Card key={movie.id} {...movie} />
-        ))}
+        {console.log(movies)}
+        {movies
+          .filter((movie: any) => movie.vote_count > 30)
+          .sort((a: any, b: any) => Number(a.id) - b.id)
+          .map((movie: any) => (
+            <Card key={movie.id} {...movie} />
+          ))}
       </div>
     </>
   );
