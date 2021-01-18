@@ -44,7 +44,6 @@ export default function SearchMovies() {
         </button>
       </form>
       <div className="card-list">
-        {console.log(movies)}
         {movies
           .filter((movie: any) => movie.vote_count > 30)
           .sort((a: any, b: any) => Number(a.id) - b.id)
