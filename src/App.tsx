@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import SearchMovies from "./SearchMovies";
+import SearchMovies from "./searchMovies";
 
 export default function App() {
   return (
