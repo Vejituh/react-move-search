@@ -1,0 +1,28 @@
+.stars-overlay {
+  display: inline-block;
+  position: relative;
+  font-style: normal;
+}
+
+.stars-overlay::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #393941;
+}
+
+.stars-innerlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-innerlay::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #ffb800;
+}
