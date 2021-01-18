@@ -3,8 +3,8 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
+    <div className="container">
+      <h1 className="title">React Movie Search</h1>
     </div>
   );
 }
