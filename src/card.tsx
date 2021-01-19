@@ -15,7 +15,7 @@ export default function Card(props: any) {
           src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${props.poster_path}`}
         />
       ) : null}
-      <h1>{props.title}</h1>
+      <p className="movie-title">{props.title || props.name}</p>
       <div className="stars-overlay">
         <div
           className="stars-innerlay"

@@ -2,6 +2,7 @@
   display: inline-block;
   position: relative;
   font-style: normal;
+  width: max-content;
 }
 
 .stars-overlay::before {
@@ -9,6 +10,8 @@
   font-weight: 900;
   content: "\f005 \f005 \f005 \f005 \f005";
   color: #393941;
+  letter-spacing: 0.4rem;
+  font-size: 1.2rem;
 }
 
 .stars-innerlay {
@@ -25,4 +28,21 @@
   font-weight: 900;
   content: "\f005 \f005 \f005 \f005 \f005";
   color: #ffb800;
+  letter-spacing: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.card-poster {
+  border-radius: 10px;
+  width: 160px;
+}
+
+.movie-title {
+  font-weight: 800;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

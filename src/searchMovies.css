@@ -3,9 +3,12 @@
 }
 
 .label {
-  font-size: 1.2rem;
-  margin-bottom: 0.2rem;
-  text-transform: uppercase;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 .input {
@@ -30,6 +33,18 @@
 
 .button:hover {
   background: rgba(255, 184, 0, 1);
+}
+
+.card-list {
+  display: flex;
+  gap: 1rem;
+  margin: 2em 0em;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.card-list::-webkit-scrollbar {
+  width: 0 !important;
 }
 
 @media (min-width: 786px) {
