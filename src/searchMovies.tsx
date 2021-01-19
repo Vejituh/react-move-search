@@ -51,13 +51,14 @@ export default function SearchMovies() {
     e.preventDefault();
 
     const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=301fea267f554470429f50bff9e67513&language=en-GB&query=${query}&page=1&include_adult=false`;
-
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      setMovies(data.results);
-    } catch (err) {
-      console.error(err);
+    if (query.match(/[a-z,A-Z,\d]/g)) {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        setMovies(data.results);
+      } catch (err) {
+        console.error(err);
+      }
     }
   };
 
@@ -85,14 +86,16 @@ export default function SearchMovies() {
           Search
         </button>
       </form>
-      <div className="card-list">
-        {movies
-          ? movies
-              .filter((movie: any) => movie.vote_count > 30)
-              .sort((a: any, b: any) => Number(a.id) - b.id)
-              .map((movie: any) => <Card key={movie.id} {...movie} />)
-          : null}
-      </div>
+      {movies.length > 1 && movies.length !== undefined ? (
+        <div className="card-list">
+          {movies
+            .filter((movie: any) => movie.vote_count > 30)
+            .sort((a: any, b: any) => Number(a.id) - b.id)
+            .map((movie: any) => (
+              <Card key={movie.id} {...movie} />
+            ))}
+        </div>
+      ) : null}
       <h1>Trending</h1>
       <div className="card-list">
         {trending.map((movie: any) => (

@@ -1,3 +1,7 @@
+*:focus {
+  outline: none;
+}
+
 .form {
   display: grid;
 }
@@ -29,6 +33,7 @@
   font-size: 1.4rem;
   cursor: pointer;
   transition: background-color 250ms;
+  font-weight: 900;
 }
 
 .button:hover {
@@ -39,22 +44,59 @@
   display: flex;
   gap: 1rem;
   margin: 2em 0em;
-  overflow: scroll;
-  scrollbar-width: none;
+  overflow-x: scroll;
 }
 
 .card-list::-webkit-scrollbar {
-  width: 0 !important;
+  width: 0;
 }
 
 @media (min-width: 786px) {
   .form {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 7fr 1fr auto;
     gap: 1rem;
     align-items: center;
   }
 
   .input {
     margin-bottom: 0;
+  }
+
+  .form {
+    margin-bottom: 2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-list {
+    scrollbar-width: normal;
+    scrollbar-color: rgba(255, 184, 0, 0.85) transparent;
+    position: relative;
+    top: -17px;
+    padding: 20px 0px 20px 0px;
+    overflow-y: hidden;
+    gap: 2rem;
+  }
+
+  .card-list::-webkit-scrollbar {
+    width: 25px;
+    height: 25px;
+  }
+
+  .card-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .card-list::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 184, 0, 0.85);
+    border-radius: 40px 10px 40px 10px;
+    border-top: solid 7px #20242b;
+    border-bottom: solid 7px #20242b;
+    border-right: solid 0px rgba(255, 184, 0, 0.85);
+    border-left: solid 0px rgba(255, 184, 0, 0.85);
+  }
+
+  .card-list::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
   }
 }
